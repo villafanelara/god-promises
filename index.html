@@ -113,12 +113,25 @@
       50% { border-color: rgba(255,255,255,0.75); }
     }
 
+    /* Versión móvil */
     @media (max-width: 768px) {
+      body {
+        background-size: cover;
+        background-position: center top;
+      }
+
+      .content {
+        margin-top: 45vh;
+        padding: 1rem;
+      }
+
       h1 { font-size: 1.2rem; }
+
       #verse { font-size: 1.4rem; max-width: 90%; }
+
       #reference { font-size: 1rem; }
+
       button svg { width: 28px; height: 28px; }
-      .content { margin-top: 45vh; }
     }
   </style>
 </head>
@@ -177,7 +190,6 @@
       verseEl.textContent = "";
       refEl.style.opacity = 0;
       let i = 0;
-
       function type() {
         if (i < text.length) {
           verseEl.textContent += text.charAt(i);
